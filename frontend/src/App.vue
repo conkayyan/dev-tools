@@ -1,21 +1,51 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'</script>
-
 <template>
-  <img id="logo" alt="Wails logo" src="./assets/images/logo-universal.png"/>
-  <HelloWorld/>
+  <el-row class="tac">
+    <el-col :lg="4" :span="6" class="border-right">
+      <el-menu
+          :default-active="activeIndex"
+          class="no-border-right"
+          @open="handleOpen"
+          @close="handleClose"
+      >
+        <el-menu-item index="qrcode">
+          <el-icon>
+            <SvgIcon icon-class="qrcode"/>
+          </el-icon>
+          <span>QRCode</span>
+        </el-menu-item>
+      </el-menu>
+    </el-col>
+    <el-col :span="18" class="show-content">
+      <QRCode v-if="activeIndex=='qrcode'"/>
+    </el-col>
+  </el-row>
 </template>
 
-<style>
-#logo {
-  display: block;
-  width: 50%;
-  height: 50%;
-  margin: auto;
-  padding: 10% 0 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-origin: content-box;
+<script lang="ts" setup>
+import {ref} from "vue"
+import QRCode from './components/QRCode.vue'
+import svgIcon from './components/svgIcon/index.vue'
+
+const activeIndex = ref('qrcode')
+const handleOpen = (key: string, keyPath: string[]) => {
+  console.log(key, keyPath)
+}
+const handleClose = (key: string, keyPath: string[]) => {
+  console.log(key, keyPath)
+}
+</script>
+
+<style scoped>
+.show-content {
+  height: 100vh;
+  padding: 20px;
+}
+
+.border-right {
+  border-right: 1px solid var(--el-border-color);
+}
+
+.no-border-right {
+  border: none;
 }
 </style>

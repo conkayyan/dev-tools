@@ -4,7 +4,10 @@ go 1.21
 
 toolchain go1.21.2
 
-require github.com/wailsapp/wails/v2 v2.7.1
+require (
+	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
+	github.com/wailsapp/wails/v2 v2.7.1
+)
 
 require (
 	github.com/bep/debounce v1.2.1 // indirect
@@ -35,5 +38,3 @@ require (
 	golang.org/x/sys v0.13.0 // indirect
 	golang.org/x/text v0.13.0 // indirect
 )
-
-// replace github.com/wailsapp/wails/v2 v2.7.1 => /media/c/goroot/pkg/mod
