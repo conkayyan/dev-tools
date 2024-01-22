@@ -16,15 +16,15 @@
       </el-menu>
     </el-col>
     <el-col :span="18" class="show-content">
-      <QRCode v-if="activeIndex=='qrcode'"/>
+      <Qrcode v-if="activeIndex=='qrcode'"/>
     </el-col>
   </el-row>
 </template>
 
 <script lang="ts" setup>
 import {ref} from "vue"
-import QRCode from './components/QRCode.vue'
-import svgIcon from './components/svgIcon/index.vue'
+import Qrcode from './components/qrcode/Index.vue'
+import SvgIcon from './components/svgIcon/Index.vue'
 
 const activeIndex = ref('qrcode')
 const handleOpen = (key: string, keyPath: string[]) => {
