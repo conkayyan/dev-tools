@@ -22,7 +22,7 @@
 
 <script lang="ts" setup>
 import {reactive, ref} from 'vue'
-import {GenerateQRCode} from '../../wailsjs/go/main/App'
+import {GenerateQRCode} from '../../../wailsjs/go/main/App'
 import {Picture as IconPicture} from '@element-plus/icons-vue'
 
 const form = reactive({
