@@ -13,3 +13,15 @@ export function Base64Encode(arg1) {
 export function GenerateQRCode(arg1) {
   return window['go']['main']['App']['GenerateQRCode'](arg1);
 }
+
+export function Md5Encode(arg1) {
+  return window['go']['main']['App']['Md5Encode'](arg1);
+}
+
+export function UrlDecode(arg1) {
+  return window['go']['main']['App']['UrlDecode'](arg1);
+}
+
+export function UrlEncode(arg1) {
+  return window['go']['main']['App']['UrlEncode'](arg1);
+}
