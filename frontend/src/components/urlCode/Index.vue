@@ -1,11 +1,11 @@
 <template>
   <el-form :model="form" label-width="80px">
-    <el-form-item label="Text">
+    <el-form-item label="Url">
       <el-input v-model="form.txt" type="textarea"/>
     </el-form-item>
     <el-form-item>
-      <el-button type="primary" @click="onSubmitEncode">Encrypt Base64</el-button>
-      <el-button type="primary" @click="onSubmitDecode">Decrypt Base64</el-button>
+      <el-button type="primary" @click="onSubmitEncode">Encrypt Url</el-button>
+      <el-button type="primary" @click="onSubmitDecode">Decrypt Url</el-button>
     </el-form-item>
     <el-form-item label="Result">
       <el-input v-model="result" type="textarea"/>
@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 import {reactive, ref} from 'vue'
-import {Base64Decode, Base64Encode} from '../../../wailsjs/go/main/App'
+import {UrlDecode, UrlEncode} from '../../../wailsjs/go/main/App'
 
 const form = reactive({
   txt: '',
@@ -24,13 +24,13 @@ const form = reactive({
 const result = ref('')
 
 const onSubmitEncode = () => {
-  Base64Encode(form.txt).then(ret => {
+  UrlEncode(form.txt).then(ret => {
     result.value = ret
   })
 }
 
 const onSubmitDecode = () => {
-  Base64Decode(form.txt).then(ret => {
+  UrlDecode(form.txt).then(ret => {
     result.value = ret
   })
 }

@@ -4,6 +4,7 @@ import (
 	"context"
 	"dev-tools/utils/base64"
 	"dev-tools/utils/qrcode"
+	"dev-tools/utils/url_code"
 )
 
 // App struct
@@ -35,4 +36,14 @@ func (a *App) Base64Encode(txt string) string {
 // Base64Decode .
 func (a *App) Base64Decode(txt string) string {
 	return base64.Decode(txt)
+}
+
+// UrlEncode .
+func (a *App) UrlEncode(txt string) string {
+	return url_code.Encode(txt)
+}
+
+// UrlDecode .
+func (a *App) UrlDecode(txt string) string {
+	return url_code.Decode(txt)
 }

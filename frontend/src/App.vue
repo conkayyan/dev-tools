@@ -20,11 +20,18 @@
           </el-icon>
           <span>Base64</span>
         </el-menu-item>
+        <el-menu-item index="urlCode">
+          <el-icon>
+            <SvgIcon icon-class="urlCode"/>
+          </el-icon>
+          <span>UrlCode</span>
+        </el-menu-item>
       </el-menu>
     </el-col>
     <el-col :span="18" class="show-content">
       <Qrcode v-if="activeIndex=='qrcode'"/>
       <Base64 v-else-if="activeIndex=='base64'"/>
+      <UrlCode v-else-if="activeIndex=='urlCode'"/>
     </el-col>
   </el-row>
 </template>
@@ -34,6 +41,7 @@ import {ref} from "vue"
 import Qrcode from './components/qrcode/Index.vue'
 import SvgIcon from './components/svgIcon/Index.vue'
 import Base64 from './components/base64/Index.vue'
+import UrlCode from './components/urlCode/Index.vue'
 
 const activeIndex = ref('qrcode')
 const handleOpen = (key: string, keyPath: string[]) => {

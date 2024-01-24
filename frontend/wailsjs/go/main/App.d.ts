@@ -6,3 +6,7 @@ export function Base64Decode(arg1:string):Promise<string>;
 export function Base64Encode(arg1:string):Promise<string>;
 
 export function GenerateQRCode(arg1:string):Promise<string>;
+
+export function UrlDecode(arg1:string):Promise<string>;
+
+export function UrlEncode(arg1:string):Promise<string>;
