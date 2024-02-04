@@ -12,7 +12,7 @@ mkdir -p build/linux/${app_dir}/usr/share/icons/hicolor/1024x1024/apps
 mkdir -p build/linux/${app_dir}/usr/share/icons/hicolor/256x256/apps
 mkdir -p build/linux/${app_dir}/DEBIAN
 
-cp build/bin/dev-tools-linux-amd64 build/linux/${app_dir}/usr/bin/${app}
+cp build/bin/${app}-linux-amd64 build/linux/${app_dir}/usr/bin/${app}
 
 cp build/appicon.png build/linux/${app_dir}/usr/share/icons/hicolor/1024x1024/apps/${app}.png
 cp build/appicon.png build/linux/${app_dir}/usr/share/icons/hicolor/256x256/apps/${app}.png
@@ -36,7 +36,7 @@ Priority: optional
 Architecture: amd64
 Maintainer: conkay <conkay@foxmail.com>
 Description: ${app_name}
-Homepage: https://github.com/conkayyan/dev-tools
+Homepage: https://github.com/conkayyan/${app}
 EOF
 
 dpkg-deb --build build/linux/${app_dir}
