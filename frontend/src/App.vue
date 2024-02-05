@@ -32,6 +32,12 @@
           </el-icon>
           <span>Md5</span>
         </el-menu-item>
+        <el-menu-item index="strLength">
+          <el-icon>
+            <SvgIcon icon-class="strLength"/>
+          </el-icon>
+          <span>Text Length</span>
+        </el-menu-item>
       </el-menu>
     </el-col>
     <el-col :span="18" class="show-content">
@@ -39,6 +45,7 @@
       <Base64 v-else-if="activeIndex=='base64'"/>
       <UrlCode v-else-if="activeIndex=='urlCode'"/>
       <Md5 v-else-if="activeIndex=='md5'"/>
+      <StrLength v-else-if="activeIndex=='strLength'"/>
     </el-col>
   </el-row>
 </template>
@@ -50,6 +57,7 @@ import SvgIcon from './components/svgIcon/Index.vue'
 import Base64 from './components/base64/Index.vue'
 import UrlCode from './components/urlCode/Index.vue'
 import Md5 from './components/md5/Index.vue'
+import StrLength from './components/strLength/Index.vue'
 
 const activeIndex = ref('qrcode')
 const handleOpen = (key: string, keyPath: string[]) => {

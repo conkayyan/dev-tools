@@ -5,6 +5,7 @@ import (
 	"dev-tools/utils/base64"
 	"dev-tools/utils/md5"
 	"dev-tools/utils/qrcode"
+	"dev-tools/utils/str_length"
 	"dev-tools/utils/url_code"
 )
 
@@ -52,4 +53,9 @@ func (a *App) UrlDecode(txt string) string {
 // Md5Encode .
 func (a *App) Md5Encode(txt string) string {
 	return md5.Encode(txt)
+}
+
+// StrLength .
+func (a *App) StrLength(txt string) int {
+	return str_length.Count(txt)
 }

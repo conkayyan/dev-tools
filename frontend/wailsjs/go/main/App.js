@@ -18,6 +18,10 @@ export function Md5Encode(arg1) {
   return window['go']['main']['App']['Md5Encode'](arg1);
 }
 
+export function StrLength(arg1) {
+  return window['go']['main']['App']['StrLength'](arg1);
+}
+
 export function UrlDecode(arg1) {
   return window['go']['main']['App']['UrlDecode'](arg1);
 }

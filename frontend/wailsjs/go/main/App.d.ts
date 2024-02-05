@@ -9,6 +9,8 @@ export function GenerateQRCode(arg1:string):Promise<string>;
 
 export function Md5Encode(arg1:string):Promise<string>;
 
+export function StrLength(arg1:string):Promise<number>;
+
 export function UrlDecode(arg1:string):Promise<string>;
 
 export function UrlEncode(arg1:string):Promise<string>;
