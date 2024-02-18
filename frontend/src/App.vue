@@ -38,6 +38,12 @@
           </el-icon>
           <span>Text Length</span>
         </el-menu-item>
+        <el-menu-item index="time">
+          <el-icon>
+            <Clock/>
+          </el-icon>
+          <span>Time</span>
+        </el-menu-item>
       </el-menu>
     </el-col>
     <el-col :span="18" class="show-content">
@@ -46,18 +52,21 @@
       <UrlCode v-else-if="activeIndex=='urlCode'"/>
       <Md5 v-else-if="activeIndex=='md5'"/>
       <StrLength v-else-if="activeIndex=='strLength'"/>
+      <Time v-else-if="activeIndex=='time'"/>
     </el-col>
   </el-row>
 </template>
 
 <script lang="ts" setup>
 import {ref} from "vue"
+import {Clock} from '@element-plus/icons-vue'
 import Qrcode from './components/qrcode/Index.vue'
 import SvgIcon from './components/svgIcon/Index.vue'
 import Base64 from './components/base64/Index.vue'
 import UrlCode from './components/urlCode/Index.vue'
 import Md5 from './components/md5/Index.vue'
 import StrLength from './components/strLength/Index.vue'
+import Time from './components/time/Index.vue'
 
 const activeIndex = ref('qrcode')
 const handleOpen = (key: string, keyPath: string[]) => {
