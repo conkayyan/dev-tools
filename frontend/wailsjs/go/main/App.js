@@ -14,8 +14,36 @@ export function GenerateQRCode(arg1) {
   return window['go']['main']['App']['GenerateQRCode'](arg1);
 }
 
+export function GetTimeOption() {
+  return window['go']['main']['App']['GetTimeOption']();
+}
+
 export function Md5Encode(arg1) {
   return window['go']['main']['App']['Md5Encode'](arg1);
+}
+
+export function SetDatetime(arg1) {
+  return window['go']['main']['App']['SetDatetime'](arg1);
+}
+
+export function SetFormat(arg1) {
+  return window['go']['main']['App']['SetFormat'](arg1);
+}
+
+export function SetLocation(arg1) {
+  return window['go']['main']['App']['SetLocation'](arg1);
+}
+
+export function SetUnix(arg1) {
+  return window['go']['main']['App']['SetUnix'](arg1);
+}
+
+export function StrLength(arg1) {
+  return window['go']['main']['App']['StrLength'](arg1);
+}
+
+export function TimeInit() {
+  return window['go']['main']['App']['TimeInit']();
 }
 
 export function UrlDecode(arg1) {
