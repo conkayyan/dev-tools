@@ -3,11 +3,11 @@ package uuid
 import (
 	"strings"
 
-	"github.com/google/uuid"
+	u "github.com/google/uuid"
 )
 
 func GenUUID(isHyphen bool) string {
-	uuidWithHyphen := uuid.NewString()
+	uuidWithHyphen := u.NewString()
 	if !isHyphen {
 		return strings.ReplaceAll(uuidWithHyphen, "-", "")
 	}
