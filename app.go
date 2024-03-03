@@ -8,6 +8,7 @@ import (
 	"dev-tools/utils/str_length"
 	"dev-tools/utils/timex"
 	"dev-tools/utils/url_code"
+	"dev-tools/utils/uuid"
 )
 
 // App struct
@@ -89,4 +90,9 @@ func (a *App) SetFormat(layout string) {
 // SetDatetime .
 func (a *App) SetDatetime(datetime string) {
 	timex.SetDatetime(datetime)
+}
+
+// GetUUID .
+func (a *App) GetUUID(isHyphen bool) string {
+	return uuid.GenUUID(isHyphen)
 }

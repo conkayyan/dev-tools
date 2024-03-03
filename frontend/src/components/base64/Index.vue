@@ -1,14 +1,14 @@
 <template>
   <el-form :model="form" label-width="80px">
     <el-form-item label="Text">
-      <el-input v-model="form.txt" type="textarea"/>
+      <el-input v-model="form.txt" type="textarea" :rows="10" />
     </el-form-item>
     <el-form-item>
       <el-button type="primary" @click="onSubmitEncode">Encrypt Base64</el-button>
       <el-button type="primary" @click="onSubmitDecode">Decrypt Base64</el-button>
     </el-form-item>
     <el-form-item label="Result">
-      <el-input v-model="result" type="textarea"/>
+      <el-input v-model="result" type="textarea" :rows="10" />
     </el-form-item>
   </el-form>
 </template>
