@@ -1,7 +1,9 @@
 package timex
 
 import (
+	_ "embed"
 	"fmt"
+	"os"
 	"time"
 )
 
@@ -20,8 +22,15 @@ type (
 )
 
 var (
+	//go:embed tzdata.zip
+	zoneInfoDataPath string
+
 	timeOption TimeOption
 )
+
+func init() {
+	_ = os.Setenv("ZONEINFO", zoneInfoDataPath)
+}
 
 func TimeInit() TimeOption {
 	timeOption.Location = time.Now().Location().String()
