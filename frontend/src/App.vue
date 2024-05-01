@@ -50,6 +50,12 @@
           </el-icon>
           <span>UUID</span>
         </el-menu-item>
+        <el-menu-item index="json">
+          <el-icon>
+            <SvgIcon icon-class="json"/>
+          </el-icon>
+          <span>Json</span>
+        </el-menu-item>
       </el-menu>
     </el-col>
     <el-col :span="18" class="show-content">
@@ -60,6 +66,7 @@
       <StrLength v-else-if="activeIndex=='strLength'"/>
       <Time v-else-if="activeIndex=='time'"/>
       <Uuid v-else-if="activeIndex=='uuid'"/>
+      <Json v-else-if="activeIndex=='json'"/>
     </el-col>
   </el-row>
 </template>
@@ -75,6 +82,7 @@ import Md5 from './components/md5/Index.vue'
 import StrLength from './components/strLength/Index.vue'
 import Time from './components/time/Index.vue'
 import Uuid from './components/uuid/Index.vue'
+import Json from './components/json/Index.vue'
 
 const activeIndex = ref('qrcode')
 const handleOpen = (key: string, keyPath: string[]) => {
@@ -102,4 +110,4 @@ const handleSelect = (key: string, keyPath: string[]) => {
 .no-border-right {
   border: none;
 }
-</style>./components/uuid/Index.vue
+</style>
