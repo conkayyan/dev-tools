@@ -10,6 +10,8 @@ export function GenerateQRCode(arg1:string):Promise<string>;
 
 export function GetTimeOption():Promise<timex.TimeOption>;
 
+export function GetUUID(arg1:boolean):Promise<string>;
+
 export function Md5Encode(arg1:string):Promise<string>;
 
 export function SetDatetime(arg1:string):Promise<void>;

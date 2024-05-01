@@ -26,6 +26,10 @@ func NewApp() *App {
 func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
 }
+func (a *App) beforeClose(ctx context.Context) (prevent bool) {
+	timex.DeleteTmpFile()
+	return false
+}
 
 // GenerateQRCode .
 func (a *App) GenerateQRCode(txt string) string {
