@@ -18,6 +18,10 @@ export function GetTimeOption() {
   return window['go']['main']['App']['GetTimeOption']();
 }
 
+export function GetUUID(arg1) {
+  return window['go']['main']['App']['GetUUID'](arg1);
+}
+
 export function Md5Encode(arg1) {
   return window['go']['main']['App']['Md5Encode'](arg1);
 }

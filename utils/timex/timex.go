@@ -2,6 +2,7 @@ package timex
 
 import (
 	"fmt"
+	"os"
 	"time"
 )
 
@@ -20,7 +21,8 @@ type (
 )
 
 var (
-	timeOption TimeOption
+	zoneInfoDataTmpFile string
+	timeOption          TimeOption
 )
 
 func TimeInit() TimeOption {
@@ -177,4 +179,10 @@ func SetDatetime(datetime string) {
 	}
 
 	timeOption.Timestamp = tm.Unix()
+}
+
+func DeleteTmpFile() {
+	if zoneInfoDataTmpFile != "" {
+		_ = os.Remove(zoneInfoDataTmpFile)
+	}
 }
