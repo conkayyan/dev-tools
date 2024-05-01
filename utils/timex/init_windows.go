@@ -7,6 +7,7 @@ import (
 )
 
 var (
+	zoneInfoDataTempFile string
 	//go:embed zoneinfo.zip
 	zoneInfoDataFS embed.FS
 )
