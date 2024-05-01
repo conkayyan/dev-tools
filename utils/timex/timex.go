@@ -21,7 +21,7 @@ type (
 )
 
 var (
-	zoneInfoDataTmpFile string
+	zoneInfoDataTempDir string
 	timeOption          TimeOption
 )
 
@@ -182,7 +182,7 @@ func SetDatetime(datetime string) {
 }
 
 func DeleteTmpFile() {
-	if zoneInfoDataTmpFile != "" {
-		_ = os.Remove(zoneInfoDataTmpFile)
+	if zoneInfoDataTempDir != "" {
+		_ = os.RemoveAll(zoneInfoDataTempDir)
 	}
 }

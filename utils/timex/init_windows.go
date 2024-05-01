@@ -7,27 +7,30 @@ import (
 )
 
 var (
-	//go:embed tzdata.zip
+	//go:embed zoneinfo.zip
 	zoneInfoDataFS embed.FS
 )
 
 func init() {
-	// read tzdata.zip from embed.FS
-	zoneInfoData, err := zoneInfoDataFS.ReadFile("tzdata.zip")
+	// read zoneinfo.zip from embed.FS
+	zoneInfoData, err := zoneInfoDataFS.ReadFile("zoneinfo.zip")
 	if err != nil {
 		log.Fatal(err.Error())
 	}
 
-	// write tzdata.zip to temp file
-	tempFile, err := os.CreateTemp("", "tzdata.zip")
-	if err != nil {
-		log.Fatal(err)
-	}
-	_, err = tempFile.Write(zoneInfoData)
+	// mkdir temp dir
+	zoneInfoDataTempDir, err = os.MkdirTemp(os.TempDir(), "zoneinfo")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	zoneInfoDataTmpFile = tempFile.Name()
-	_ = os.Setenv("ZONEINFO", tempFile.Name())
+	// write zoneinfo.zip to temp dir
+	zoneInfoDataTempFile = filepath.Join(zoneInfoDataTempDir, "zoneinfo.zip")
+	err = os.WriteFile(zoneInfoDataTempFile, zoneInfoData, 0666)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// set ZONEINFO env
+	_ = os.Setenv("ZONEINFO", zoneInfoDataTempFile)
 }
