@@ -15,6 +15,7 @@ export default defineConfig({
         }),
         Components({
             resolvers: [ElementPlusResolver()],
+            directoryAsNamespace: true,
         }),
         createSvgIconsPlugin({
             // 指定需缓存的图标文件夹
