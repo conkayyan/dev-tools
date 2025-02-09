@@ -26,6 +26,12 @@
           </el-icon>
           <span>UrlCode</span>
         </el-menu-item>
+        <el-menu-item index="case">
+          <el-icon>
+            <SvgIcon icon-class="case"/>
+          </el-icon>
+          <span>ToUpper/Lower</span>
+        </el-menu-item>
         <el-menu-item index="md5">
           <el-icon>
             <SvgIcon icon-class="md5"/>
@@ -62,6 +68,7 @@
       <Qrcode v-if="activeIndex=='qrcode'"/>
       <Base64 v-else-if="activeIndex=='base64'"/>
       <UrlCode v-else-if="activeIndex=='urlCode'"/>
+      <Case v-else-if="activeIndex=='case'"/>
       <Md5 v-else-if="activeIndex=='md5'"/>
       <StrLength v-else-if="activeIndex=='strLength'"/>
       <Time v-else-if="activeIndex=='time'"/>
@@ -78,6 +85,7 @@ import Qrcode from './components/qrcode/Index.vue'
 import SvgIcon from './components/svgIcon/Index.vue'
 import Base64 from './components/base64/Index.vue'
 import UrlCode from './components/urlCode/Index.vue'
+import Case from './components/case/Index.vue'
 import Md5 from './components/md5/Index.vue'
 import StrLength from './components/strLength/Index.vue'
 import Time from './components/time/Index.vue'
